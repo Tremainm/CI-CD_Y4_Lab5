@@ -29,8 +29,7 @@ for _ in range(RETRIES):
     except OperationalError:
         time.sleep(DELAY)
 
-    SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False,
-    expire_on_commit=False)
+SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False, expire_on_commit=False)
 
 def get_db():
     db = SessionLocal()
